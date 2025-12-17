@@ -17,10 +17,15 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState(format(new Date(), 'yyyy-MM-dd'));
+// Track input fields for title, description, and due date
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!title.trim()) return;
+const handleSubmit = (e: FormEvent) => { ... }
+  }
+// Prevent default form submission and reset fields after adding a task
+ 
 
     onSubmit({
       title: title.trim(),
