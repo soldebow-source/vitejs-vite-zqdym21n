@@ -11,6 +11,7 @@ interface TaskListProps {
 export function TaskList({ tasks, onToggleComplete, onToggleHighlight, onDelete }: TaskListProps) {
   const incompleteTasks = tasks.filter(task => !task.is_completed);
   const completedTasks = tasks.filter(task => task.is_completed);
+// Split tasks into incomplete and completed for separate sections
 
   return (
     <div className="task-list">
