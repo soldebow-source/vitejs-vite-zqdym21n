@@ -10,8 +10,13 @@ interface TaskItemProps {
 
 export function TaskItem({ task, onToggleComplete, onToggleHighlight, onDelete }: TaskItemProps) {
   return (
-    <div className={`task-item ${task.is_completed ? 'completed' : ''} ${task.is_highlighted ? 'highlighted' : ''}`}>
+    const classes = ['task-item'];
+    if(task.is_completed) classes.push('completed');
+    if(task.is_highlighted) classes.push('highlighted');
+    <div className={classes.join(' ')}></div>    
       <div className="task-checkbox">
+   
+// Checkbox toggles task completion   
         <input
           type="checkbox"
           checked={task.is_completed}
